@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Minimalista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        .slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        .gallery-item {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Ensure visibility when in view */
+        .animate-on-scroll {
+            opacity: 0;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-blue-100 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50" alt="Logo" class="h-12 fade-in">
+                <h1 class="ml-4 text-2xl font-bold text-gray-800">Website Minimalista</h1>
+            </div>
+            <div class="relative">
+                <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+                <nav id="menu" class="hidden absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg">
+                    <ul class="flex flex-col p-4">
+                        <li><a href="#home" class="block py-2 text-gray-800 hover:bg-blue-100">Home</a></li>
+                        <li><a href="#corpo" class="block py-2 text-gray-800 hover:bg-blue-100">Corpo</a></li>
+                        <li><a href="#galeria" class="block py-2 text-gray-800 hover:bg-blue-100">Galeria</a></li>
+                        <li><a href="#contato" class="block py-2 text-gray-800 hover:bg-blue-100">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Corpo -->
+    <section id="corpo" class="container mx-auto px-4 py-16 mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center animate-on-scroll">
+                <img src="https://via.placeholder.com/300x200" alt="Imagem 1" class="mx-auto mb-4 rounded-lg">
+                <h2 class="text-xl font-semibold text-gray-800">Título 1</h2>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="text-center animate-on-scroll" style="animation-delay: 0.2s;">
+                <img src="https://via.placeholder.com/300x200" alt="Imagem 2" class="mx-auto mb-4 rounded-lg">
+                <h2 class="text-xl font-semibold text-gray-800">Título 2</h2>
+                <p class="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="text-center animate-on-scroll" style="animation-delay: 0.4s;">
+                <img src="https://via.placeholder.com/300x200" alt="Imagem 3" class="mx-auto mb-4 rounded-lg">
+                <h2 class="text-xl font-semibold text-gray-800">Título 3</h2>
+                <p class="text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="container mx-auto px-4 py-16">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Galeria</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img src="https://via.placeholder.com/200" alt="Foto 1" class="w-full h-48 object-cover rounded-lg gallery-item" style="animation-delay: 0s;">
+            <img src="https://via.placeholder.com/200" alt="Foto 2" class="w-full h-48 object-cover rounded-lg gallery-item" style="animation-delay: 0.2s;">
+            <img src="https://via.placeholder.com/200" alt="Foto 3" class="w-full h-48 object-cover rounded-lg gallery-item" style="animation-delay: 0.4s;">
+            <img src="https://via.placeholder.com/200" alt="Foto 4" class="w-full h-48 object-cover rounded-lg gallery-item" style="animation-delay: 0.6s;">
+            <img src="https://via.placeholder.com/200" alt="Foto 5" class="w-full h-48 object-cover rounded-lg gallery-item" style="animation-delay: 0.8s;">
+            <img src="https://via.placeholder.com/200" alt="Foto 6" class="w-full h-48 object-cover rounded-lg gallery-item" style="animation-delay: 1s;">
+            <img src="https://via.placeholder.com/200" alt="Foto 7" class="w-full h-48 object-cover rounded-lg gallery-item" style="animation-delay: 1.2s;">
+            <img src="https://via.placeholder.com/200" alt="Foto 8" class="w-full h-48 object-cover rounded-lg gallery-item" style="animation-delay: 1.4s;">
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="container mx-auto px-4 py-16">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Contato</h2>
+        <div class="max-w-md mx-auto">
+            <div>
+                <label for="nome" class="block text-gray-800 mb-2">Nome</label>
+                <input type="text" id="nome" class="w-full p-2 border rounded-lg mb-4" placeholder="Seu nome">
+            </div>
+            <div>
+                <label for="mensagem" class="block text-gray-800 mb-2">Mensagem</label>
+                <textarea id="mensagem" class="w-full p-2 border rounded-lg mb-4" rows="4" placeholder="Sua mensagem"></textarea>
+            </div>
+            <p class="text-gray-800 mb-4">Telefone: <a href="tel:+5581995444620" class="text-blue-600">+55 81 99544-4620</a></p>
+            <button onclick="alert('Mensagem enviada!')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Enviar</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 text-center text-gray-800">
+            <p>Ana Carla Canto</p>
+            <p>IAPE - Instituto Adventista Pernambucano de Ensino</p>
+            <p>BR 232, km91, CEP 55.695-000, Sairé, PE</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Scroll animations
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible', 'slide-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        elements.forEach(element => observer.observe(element));
+
+        // Gallery animation
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const galleryObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    galleryObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        galleryItems.forEach(item => galleryObserver.observe(item));
+    </script>
+</body>
+</html>
